@@ -48,13 +48,13 @@ El firmware está dividido en **9 clases**, cada una con una responsabilidad ún
 │                   REXController                     │
 │           (orquestador principal)                   │
 │                                                     │
-│  ┌──────────────┐  ┌──────────────┐  ┌───────────┐ │
-│  │GoteoDetector │→ │DropProcessor │→ │DataPacket │ │
-│  └──────────────┘  └──────────────┘  └───────────┘ │
+│  ┌──────────────┐  ┌──────────────┐  ┌───────────┐  │
+│  │GoteoDetector │→ │DropProcessor │→ │DataPacket │  │
+│  └──────────────┘  └──────────────┘  └───────────┘  │
 │                           │                         │
-│  ┌──────────────┐  ┌──────┴───────┐  ┌───────────┐ │
-│  │DisplayCtrlr  │  │MQTTPublisher │  │AlertMngr  │ │
-│  └──────────────┘  └──────────────┘  └───────────┘ │
+│  ┌──────────────┐  ┌──────┴───────┐  ┌───────────┐  │
+│  │DisplayCtrlr  │  │MQTTPublisher │  │AlertMngr  │  │
+│  └──────────────┘  └──────────────┘  └───────────┘  │
 │                                                     │
 │  ┌──────────────┐  ┌──────────────┐                 │
 │  │VenoclisisSes │  │ConfigManager │                 │
@@ -430,13 +430,13 @@ Este es el camino que recorre la información desde que cae una gota hasta que l
     └──→ [MQTTPublisher.publish()]    → broker MQTT
                                               │
                                               ▼
-                                       [Nodo Braquio]
+                                        [Nodo Braquio]
                                               │
                                               ▼
                                       [Servidor central]
                                               │
                                               ▼
-                                  [Dispositivo enfermera]
+                                    [Dispositivo enfermera]
 ```
 
 ---
@@ -492,5 +492,5 @@ REX_V1/
 
 ---
 
-*Documentación generada para REX V1 · DinoStar*  
-*Actualizar este documento cada vez que se agregue o modifique una clase.*
+*Documentación escrita para REX V1 · DinoStar*  
+*Se actualizara este documento cada vez que se agregue o modifique una clase.*
