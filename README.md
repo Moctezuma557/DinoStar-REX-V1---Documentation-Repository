@@ -56,7 +56,7 @@ El sistema se organiza en cuatro capas:
 | 3 | Servidor central | Broker MQTT + backend. Procesa y distribuye la información |
 | 4 | Dispositivo enfermera | Dashboard en tiempo real con alertas y historial |
 
-Para la documentación técnica completa del firmware y el diagrama de clases UML, consulta [`docs/firmware.md`](./docs/firmware.md).
+Para la documentación técnica completa del firmware y clases, consulta la [`Documentación de firmware`](REX_V1_Documentacion_Firmware.md).
 
 ---
 
