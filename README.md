@@ -7,7 +7,7 @@
 
 **Sistema IoT de monitoreo de venoclisis en tiempo real**
 
-*Desarrollado por [DinoStar](https://github.com/TU_USUARIO)*
+*Desarrollado por [Adrián Pérez Pérez [DinoStar]](https://github.com/Moctezuma557)*
 
 ---
 
@@ -88,7 +88,7 @@ Para la documentación técnica completa del firmware y clases, consulta la [`Do
 
 ## Créditos
 
-**Desarrollado por:** Adrian — [DinoStar](https://github.com/Moctezuma557)  
+**Desarrollado por:** Adrian Pérez— [DinoStar](https://github.com/Moctezuma557)  
 **Proyecto:** REX V1 — Sistema IoT de monitoreo de venoclisis  
  
 
@@ -96,5 +96,5 @@ Para la documentación técnica completa del firmware y clases, consulta la [`Do
 
 
 <div align="center">
-<sub>DinoStar © 2025 · Hecho en Morelia, México 🦕</sub>
+<sub>DinoStar © 2026 · Hecho en Morelia, México para el mundo 🦕</sub>
 </div>
