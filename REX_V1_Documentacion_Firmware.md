@@ -334,6 +334,8 @@ Si el ESP32 se reinicia accidentalmente en medio de una sesión, al volver a enc
 | `cargar()` | `void` | Lee los parámetros desde la memoria NVS al arrancar |
 | `guardar()` | `void` | Escribe los parámetros actuales en la memoria NVS |
 | `get/set()` | varios | Getters y setters para cada parámetro individual |
+| `resetearDefault()` | `void` | Establece los valores por defecto en la memoria|
+| `debug()` | `void` | Imprime en monitor la configuración actual|
 
 ---
 
