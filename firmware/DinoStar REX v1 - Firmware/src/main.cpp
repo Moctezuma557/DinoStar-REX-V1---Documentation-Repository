@@ -1,26 +1,33 @@
 #include <Arduino.h>
 
-#include "classes/DataPacket.h";
+#include "classes/ConfigManager.h"
+
+ConfigManager conf;
 
 void setup(){
 
   Serial.begin(115200);
+    
+    // Espera hasta que el monitor serial esté conectado
+    while(!Serial) { delay(10); }
+    delay(500);
+    
   Serial.println("DinoStar REX v1 firmware --> Iniciando....");
 
-  DataPacket pkt;
-  pkt.pacienteId = "123456789";
-  pkt.gotasPorMin = 20.0f;
-  pkt.tiempoRestante = 10;
-  pkt.volRestante = 0.0f;
-  pkt.modo = ModoGoteo::NORMAL_GOTEO;
-  pkt.timestamp = millis();
+  
 
-  Serial.println(pkt.pacienteId);
-  Serial.println(pkt.gotasPorMin);
-  Serial.println(pkt.tiempoRestante);
-  Serial.println(pkt.volRestante);
- 
-  Serial.println(pkt.timestamp);  
+
+
+  conf.cargar();
+
+  conf.setPacienteId("cama-03");
+  conf.setVolTotal(500.0f);
+  conf.setModoGoteo(ModoGoteo::NORMAL_GOTEO);
+
+  conf.guardar();
+
+  Serial.println("\n>>> Recargando desde NVS...");
+  conf.cargar();
 }
 
 void loop(){
