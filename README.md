@@ -28,6 +28,16 @@ El objetivo es reducir los tiempos de respuesta del personal clínico ante situa
 
 ---
 
+## Flujo de ramas 
+```mermaid
+stateDiagram
+    Cs_ConfigMager --> Develop
+    Cs_VenoclisisSession --> Develop
+
+    Develop --> Main/Master
+```
+
+
 ## Características principales
 
 - Detección de gotas mediante sensor infrarrojo con interrupción de hardware (ISR)
