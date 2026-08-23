@@ -79,12 +79,19 @@ void VenoclisisSession::configurar(const String& id, float vol) {
 };
 
 void VenoclisisSession::debug() const {
+    String estadoStr;
+    switch(estado) {
+        case EstadoSesion::ACTIVA:     estadoStr = "ACTIVA";     break;
+        case EstadoSesion::PAUSADA:    estadoStr = "PAUSADA";    break;
+        case EstadoSesion::FINALIZADA: estadoStr = "FINALIZADA"; break;
+        case EstadoSesion::ERROR:      estadoStr = "ERROR";      break;
+        default:                       estadoStr = "DESCONOCIDO";
+    }
+
     Serial.println("---- VenoclisisSession ----");
-    Serial.println("  pacienteId : " + pacienteId);
-    Serial.println("  inicioSesion : " + String(inicioSesion));
-    Serial.println("  volTotal   : " + String(volTotal) + " mL");
-    Serial.println("  estado     : " + String(estado == EstadoSesion::ACTIVA
-                                               ? "ACTIVA"
-                                               : "PAUSADA"));
-    Serial.println("-----------------------");
+    Serial.println("  pacienteId   : " + pacienteId);
+    Serial.println("  inicioSesion : " + String(inicioSesion) + " ms");
+    Serial.println("  volTotal     : " + String(volTotal) + " mL");
+    Serial.println("  estado       : " + estadoStr);
+    Serial.println("---------------------------");
 }
