@@ -30,8 +30,9 @@ El objetivo es reducir los tiempos de respuesta del personal clínico ante situa
 ## Flujo de ramas 
 ```mermaid
 stateDiagram
-    Cs_ConfigMager --> Develop
-    Cs_VenoclisisSession --> Develop
+    Cs_ConfigMager --> Cs_VenoclisisSession
+    Cs_VenoclisisSession --> Cs_GoteoDetector
+    Cs_GoteoDetector --> Develop
 
     Develop --> Main/Master
 ```
