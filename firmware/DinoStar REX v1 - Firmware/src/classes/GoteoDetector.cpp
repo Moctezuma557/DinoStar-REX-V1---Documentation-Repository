@@ -46,3 +46,59 @@ void IRAM_ATTR GoteoDetector:: onGotaDetectada() {
     }
 
 }
+
+// <========================  MÉTODO simularGota() =========================>
+
+void GoteoDetector::simularGota(){
+
+    if(!modoSimulacion){
+        Serial.println("[GoteoDetector] No se puede usar este método en modo simulación");
+        return;
+    } 
+
+    digitalWrite(pinSimulacion, HIGH);
+    delayMicroseconds(500);
+    digitalWrite(pinSimulacion, LOW);
+
+}
+
+// <========================  MÉTODO setCallback =========================>
+
+void GoteoDetector::setCallback(void (*callback)()) {
+    onGotaCallback = callback;
+}
+
+// <========================  MÉTODO setModo() =========================>
+
+void GoteoDetector::setModo(ModoGoteo modo) {
+    modoGoteo = modo;
+}
+
+
+// <========================  MÉTODOS GETTERS =========================>
+
+
+// <========================  MÉTODO getModo() =========================>
+
+ModoGoteo GoteoDetector::getModo() const {
+    return modoGoteo;
+}
+
+uint32_t GoteoDetector::getUltimaGota() const {
+    return ultimaGota;
+}
+
+
+// <========================  MÉTODO debug() =========================>
+
+void GoteoDetector::debug() const{
+
+    Serial.println("---- GoteoDetector ----");
+    Serial.println("  pinSensor    : " + String(pinSensor));
+    Serial.println("  modoGoteo     : " + String(modoGoteo == ModoGoteo::NORMAL_GOTEO
+                                              ? "NORMAL (20 gotas/mL)"
+                                              : "MICRO  (60 gotas/mL)"));
+    Serial.println("  ultimaGota   : " + String(ultimaGota) + " ms");
+    Serial.println("  modoSimulacion: " + String(modoSimulacion));
+    Serial.println("---------------------------");  
+}
